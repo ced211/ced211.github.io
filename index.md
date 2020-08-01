@@ -1,5 +1,5 @@
 ## Inpainting an prediction GAN for audio
-IGAN, InpaintingGAN is a neural network to inpaint magnitude spectrum. It can be trained to inpaint the magnitude spectrum of an audio frame of length T second, given the previous and subsequent T seconds. PGAN, PredicitonGAN is an adaptation of IGAN to perform audio prediction. It can be trained to predict an audio frame of T second, given the T previous second. This webpage accompaing the [github repository] (https://github.com/ced211/master_thesis.git).
+IGAN, InpaintingGAN is a neural network to inpaint magnitude spectrum. It can be trained to inpaint the magnitude spectrum of an audio frame of length T second, given the previous and subsequent T seconds. PGAN, PredicitonGAN is an adaptation of IGAN to perform audio prediction. It can be trained to predict an audio frame of T second, given the T previous second. This webpage accompaing the [github repository](https://github.com/ced211/master_thesis.git).
 
 ### IGAN
 
