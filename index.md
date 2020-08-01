@@ -9,16 +9,16 @@ On the example below, one can see the spectrum outputs by IGAN and the correspon
 
 <table>
   <tr>
-    <th> <img src="Samples/batch_2_rec_vs_original_spectrum_sample_59.png" </th>
-    <th> <img src="Samples/batch_2_rec_vs_original_audio_sample_59.png" </th>
+    <th> <img src="Samples/0.128/batch_2_rec_vs_original_spectrum_sample_59.png" </th>
+    <th> <img src="Samples/0.128/batch_2_rec_vs_original_audio_sample_59.png" </th>
   </tr>
   <tr>
-    <th> <img src="Samples/batch_0_rec_vs_original_spectrum_sample_174.png" </th>
-    <th> <img src="Samples/batch_0_rec_vs_original_audio_sample_174.png" </th>
+    <th> <img src="Samples/0.128/batch_0_rec_vs_original_spectrum_sample_174.png" </th>
+    <th> <img src="Samples/0.128/batch_0_rec_vs_original_audio_sample_174.png" </th>
   </tr>
   <tr>
-    <th> <img src="Samples/batch_8_rec_vs_original_spectrum_sample_168.png" </th>
-    <th> <img src="Samples/batch_8_rec_vs_original_audio_sample_168.png" </th>
+    <th> <img src="Samples/0.128/batch_8_rec_vs_original_spectrum_sample_168.png" </th>
+    <th> <img src="Samples/0.128/batch_8_rec_vs_original_audio_sample_168.png" </th>
   </tr>
 </table>
 
