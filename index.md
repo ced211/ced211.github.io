@@ -13,20 +13,14 @@ On the example below, one can see the spectrum outputs by IGAN and the correspon
     <th> <img src="Samples/batch_2_rec_vs_original_audio_sample_59.png" </th>
   </tr>
   <tr>
-    <th> <img src="batch_0_rec_vs_original_audio_sample_174.png" </th>
-    <th> <img src="batch_0_rec_vs_original_spectrum_sample_174.png" </th>
+    <th> <img src="Samples/batch_0_rec_vs_original_audio_sample_174.png" </th>
+    <th> <img src="Samples/batch_0_rec_vs_original_spectrum_sample_174.png" </th>
   </tr>
   <tr>
     <th> <img src="Samples/batch_8_rec_vs_original_spectrum_sample_168.png" </th>
     <th> <img src="Samples/batch_8_rec_vs_original_audio_sample_168.png" </th>
   </tr>
 </table>
-| ![Spectrum sample 0](Samples/batch_2_rec_vs_original_spectrum_sample_59.png) | ![Audio sample 0](Samples/batch_2_rec_vs_original_audio_sample_59.png) |
-|---|---|
-| ![Spectrum sample 1](batch_0_rec_vs_original_audio_sample_174.png) | ![Audio sample 1](batch_0_rec_vs_original_spectrum_sample_174.png) |
-|---|---|
-| ![Spectrum sample 2](Samples/batch_8_rec_vs_original_spectrum_sample_168.png) |![Audio sample 2](Samples/batch_8_rec_vs_original_audio_sample_168.png) |
-|---|---|
 
 Here, you can heard the corresponding audio: [original audio](/Samples/batch_2_or_sample_59.wav), [reconstructed audio](/Samples/batch_2_rec_sample_59.wav).
 
