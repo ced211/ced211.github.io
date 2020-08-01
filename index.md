@@ -28,7 +28,14 @@ Here are other sample for T=0.128
   <source src="/Samples/kalimba137.wav" type="audio/wav">
 Your browser does not support the audio element.
 </audio> 
-
+<audio controls>
+  <source src="/Samples/test.wav" type="audio/wav">
+Your browser does not support the audio element.
+</audio> 
+<audio controls>
+  <source src="/Samples/0.198/batch_2_or_sample_59.wav" type="audio/wav">
+Your browser does not support the audio element.
+</audio> 
 ```markdown
 Syntax highlighted code block
 
