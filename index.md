@@ -6,6 +6,21 @@ IGAN, InpaintingGAN is a neural network to inpaint magnitude spectrum. It can be
 Here are some sample output by IGAN for T=0.064. To reconstruct the audio from the magnitude spectrum, the Griffin-Lim algorithm was used. As you can see on the various examples, the reconstructed spectrum is rather good, but blurrred. On the other hand, the audio waveforms look similar to the ground truth even if thay are not close from them. This is explained by the fact that the Griffin-Lim does not output the exact waveform, even if it is fed with the real magnitude. Moreover, it works from an approximation of the real magnitude spectrum.
 
 On the example below, one can see the spectrum outputs by IGAN and the corresponding waveform obtained with an extra Griffin-Lim step. To obtain this result, IGAN was trained for 200 epochs on the small FMA dataset. The network performence can be probably improved by letting it train longer. 
+
+<table>
+  <tr>
+    <th> <img src="Samples/batch_2_rec_vs_original_spectrum_sample_59.png" </th>
+    <th> <img src="Samples/batch_2_rec_vs_original_audio_sample_59.png" </th>
+  </tr>
+  <tr>
+    <th> <img src="batch_0_rec_vs_original_audio_sample_174.png" </th>
+    <th> <img src="batch_0_rec_vs_original_spectrum_sample_174.png" </th>
+  </tr>
+  <tr>
+    <th> <img src="Samples/batch_8_rec_vs_original_spectrum_sample_168.png" </th>
+    <th> <img src="Samples/batch_8_rec_vs_original_audio_sample_168.png" </th>
+  </tr>
+</table>
 | ![Spectrum sample 0](Samples/batch_2_rec_vs_original_spectrum_sample_59.png) | ![Audio sample 0](Samples/batch_2_rec_vs_original_audio_sample_59.png) |
 |---|---|
 | ![Spectrum sample 1](batch_0_rec_vs_original_audio_sample_174.png) | ![Audio sample 1](batch_0_rec_vs_original_spectrum_sample_174.png) |
