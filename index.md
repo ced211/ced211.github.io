@@ -11,10 +11,10 @@ On the example below, one can see the spectrum outputs by IGAN and the correspon
 Here, you can heard the corresponding audio: [original audio](/Samples/batch_2_or_sample_59.wav), [reconstructed audio](/Samples/batch_2_rec_sample_59.wav).
 
 
-<audio id="test">
-<source src="Samples/test.wav" type="audio/wav">
-</audio>
-<button onclick="document.getElementById('test').play()">Play Audio</button>
+ <audio controls>
+  <source src="/Samples/test.wav" type="audio/wav">
+Your browser does not support the audio element.
+</audio> 
 
 ```markdown
 Syntax highlighted code block
