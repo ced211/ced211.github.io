@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GAN for audio inpainting and prediction</title>
+</head>
+<body>
+<h2 id="inpainting-an-prediction-gan-for-audio">Inpainting and Prediction GAN for audio</h2>
+<p>IGAN, InpaintingGAN is a neural network to inpaint magnitude spectrum. It can be trained to inpaint the magnitude
+    spectrum of an audio frame of length T second, given the previous and subsequent T seconds. PGAN, PredicitonGAN is
+    an adaptation of IGAN to perform audio prediction. It can be trained to predict an audio frame of T second, given
+    the T previous second. This webpage accompaing the <a href="https://github.com/ced211/master_thesis.git">github
+        repository</a>.</p>
+<h3 id="igan">IGAN</h3>
+<p>Here are some sample output by IGAN for T=0.064. To reconstruct the audio from the magnitude spectrum, the
+    Griffin-Lim algorithm was used. As you can see on the various examples, the reconstructed spectrum is rather good,
+    but blurrred. On the other hand, the audio waveforms look similar to the ground truth even if thay are not close
+    from them. This is explained by the fact that the Griffin-Lim does not output the exact waveform, even if it is fed
+    with the real magnitude. Moreover, it works from an approximation of the real magnitude spectrum.</p>
+<p>On the example below, one can see the spectrum outputs by IGAN and the corresponding waveform obtained with an extra
+    Griffin-Lim step. To obtain this result, IGAN was trained for 200 epochs on the small FMA dataset. The network
+    performence can be probably improved by letting it train longer. </p>
+<table class="center">
+    <tr>
+        <th> Spectrum</th>
+        <th> Waveform</th>
+    </tr>
+    <tr>
+        <td><img src="Samples/IGAN/0.128/batch_2_rec_vs_original_spectrum_sample_59.png" width="640" height="480"/></td>
+        <td><img src="Samples/IGAN/0.128/batch_2_rec_vs_original_audio_sample_59.png" width="640" height="480"/></td>
+    </tr>
+    <tr>
+        <th><img src="Samples/IGAN/0.128/batch_0_rec_vs_original_spectrum_sample_174.png"</th>
+        <th><img src="Samples/IGAN/0.128/batch_0_rec_vs_original_audio_sample_174.png"</th>
+    </tr>
+    <tr>
+        <th><img src="Samples/IGAN/0.128/batch_8_rec_vs_original_spectrum_sample_168.png"</th>
+        <th><img src="Samples/IGAN/0.128/batch_8_rec_vs_original_audio_sample_168.png"</th>
+    </tr>
+</table>
+<table>
+    <tr>
+        <th> Original Audio</th>
+        <th> Reconstructed Audio</th>
+    </tr>
+    <tr>
+        <td>
+            <audio controls=" ">
+                <source src="Samples/IGAN/0.128/batch_2_or_sample_59.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </td>
+        <td>
+            <audio controls=" ">
+                <source src="Samples/IGAN/0.128/batch_2_rec_sample_59.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <audio controls=" ">
+                <source src="Samples/IGAN/0.128/batch_0_or_sample_174.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </td>
+        <td>
+            <audio controls=" ">
+                <source src="Samples/IGAN/0.128/batch_0_rec_sample_174.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </td>
+    </tr>
+    </tr>
+    <tr>
+        <td>
+            <audio controls=" ">
+                <source src="Samples/IGAN/0.128/batch_8_or_sample_168.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </td>
+        <td>
+            <audio controls=" ">
+                <source src="Samples/IGAN/0.128/batch_8_rec_sample_168.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </td>
+    </tr>
+</table>
+
+<p>Here are other sample for T=0.128 </p>
+
+
+<h3 id="igan">PGAN</h3>
+<p>
+    PGAN is an adaptation of IGAN for audio prediction. Now, the neural network predict the magnitude spectrum of an
+    audio frame of length T given the T past sample.
+</p>
+<p>
+    On the example below, one can see that PGAN perform less well than IGAN. It is because the new task is much more
+    challenging. However, the result are still interesting.
+</p>
+<h3> Perceptual Evaluation</h3>
+<p>
+    To perceptually evaluate the model, we used to fill in one gap at 0.5s in a 2s long audio sample. Then, we run a
+    matlab function to compute the ODG between the original audio and the audio with the filled gap. The example below are obtained with IGAN with T = 0.064
+</p>
+<table>
+    <tr>
+        <th> Original Audio</th>
+        <th> Reconstructed Audio</th>
+        <th> Audio with hole</th>
+    </tr>
+    <tr>
+        <td>
+            <audio controls=" ">
+                <source src="./Samples/kalimba137.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </td>
+        <td>
+            <audio controls=" ">
+                <source src="Samples/IGAN/0.128/kalimba137.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </td>
+        <td>
+            <audio controls=" ">
+                <source src="Samples/IGAN/0.128/kalimba137.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <audio controls=" ">
+                <source src="./Samples/kalimba137.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </td>
+        <td>
+            <audio controls=" ">
+                <source src="Samples/IGAN/0.128/kalimba137.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </td>
+        <td>
+            <audio controls=" ">
+                <source src="Samples/IGAN/0.128/kalimba137.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <audio controls=" ">
+                <source src="./Samples/kalimba137.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </td>
+        <td>
+            <audio controls=" ">
+                <source src="Samples/IGAN/0.128/kalimba137.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </td>
+        <td>
+            <audio controls=" ">
+                <source src="Samples/IGAN/0.128/kalimba137.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </td>
+    </tr>
+</table>
+<h3> Generalization </h3>
+<p>
+    To test our model generalization ability, we used it to inpaint on the MAESTRO dataset while training it on the
+    small version of the FMA dataset. The FMA dataset is composed of 3000 track of 30s music of 8 diffferent style while
+    the MAESTRO dataset is composed of classical piano record. The example below are obtained with IGAN with T = 0.064
+</p>
+<table class="center">
+    <tr>
+        <th> Spectrum</th>
+        <th> Waveform</th>
+    </tr>
+    <tr>
+        <td><img src="Samples/Generalization/batch_0_rec_vs_original_spectrum_sample_125.png" width="640" height="480"/></td>
+        <td><img src="Samples/Generalization/batch_0_rec_vs_original_audio_sample_125.png" width="640" height="480"/></td>
+    </tr>
+    <tr>
+        <th><img src="Samples/Generalization/batch_1_rec_vs_original_spectrum_sample_145.png"</th>
+        <th><img src="Samples/Generalization/batch_1_rec_vs_original_audio_sample_145.png"</th>
+    </tr>
+    <tr>
+        <th><img src="Samples/Generalization/batch_2_rec_vs_original_spectrum_sample_79.png"</th>
+        <th><img src="Samples/Generalization/batch_2_rec_vs_original_audio_sample_79.png"</th>
+    </tr>
+</table>
+<table>
+    <tr>
+        <th> Original Audio</th>
+        <th> Reconstructed Audio</th>
+    </tr>
+    <tr>
+        <td>
+            <audio controls=" ">
+                <source src="Samples/Generalization/batch_0_or_sample_125.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </td>
+        <td>
+            <audio controls=" ">
+                <source src="Samples/Generalization/batch_0_rec_sample_125.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <audio controls=" ">
+                <source src="Samples/Generalization/batch_1_or_sample_145.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </td>
+        <td>
+            <audio controls=" ">
+                <source src="Samples/Generalization/batch_1_rec_sample_145.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </td>
+    </tr>
+    </tr>
+    <tr>
+        <td>
+            <audio controls=" ">
+                <source src="Samples/Generalization/batch_2_or_sample_79.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </td>
+        <td>
+            <audio controls=" ">
+                <source src="Samples/Generalization/batch_2_rec_sample_79.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </td>
+    </tr>
+</table>
+
+<h3> Reference</h3>
+<p>
+    <cite>"Enabling
+        Factorized Piano Music Modeling and Generation with the MAESTRO Dataset." </cite>, Curtis Hawthorne, Andriy
+    Stasyuk, Adam Roberts, Ian Simon, Cheng-Zhi Anna Huang,
+    Sander Dieleman, Erich Elsen, Jesse Engel, and Douglas Eck.
+    In International Conference on Learning Representations, 2019.
+</p>
+<p>
+    <cite>A Dataset for Music Analysis</cite>, Defferrard, Michael and Benzi, Kirell and Vandergheynst, Pierre and
+    Bresson, Xavier. In 18th International Society for Music Information Retrieval Conference (ISMIR)
+</p>
+</body>
+</html>
