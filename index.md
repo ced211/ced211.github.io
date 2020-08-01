@@ -7,7 +7,7 @@ Here are some sample output by IGAN for T=0.064. To reconstruct the audio from t
 
 On the example below, one can see the spectrum outputs by IGAN and the corresponding waveform obtained with an extra Griffin-Lim step. To obtain this result, IGAN was trained for 200 epochs on the small FMA dataset. The network performence can be probably improved by letting it train longer. 
 | ![spectrum sample 0](Samples/batch_2_rec_vs_original_spectrum_sample_59.png) | ![Audio sample 0](Samples/batch_2_rec_vs_original_audio_sample_59.png) |
-|---|---|
+
 Here, you can heard the corresponding audio: [original audio](/Samples/batch_2_or_sample_59.wav), [reconstructed audio](/Samples/batch_2_rec_sample_59.wav).
 
 
