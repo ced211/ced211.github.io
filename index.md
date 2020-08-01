@@ -5,8 +5,8 @@ IGAN, InpaintingGAN is a neural network to inpaint magnitude spectrum. It can be
 
 Here are some sample output by IGAN for T=0.064. To reconstruct the audio from the magnitude spectrum, the Griffin-Lim algorithm was used. As you can see on the various examples, the reconstructed spectrum is rather good, but blurrred. On the other hand, audio waveformis not similar to the ground truth. This is explained by the fact that the Griffin-Lim does not output the exact waveform, even if feed with the real magnitude. Moreover, it works from an approximation of the real magnitude spectrum.
 
-![Audio sample 0](Samples/batch_2_rec_vs_original_audio_sample_59.png)
-![spectrum sample 0](Samples/batch_2_rec_vs_original_spectrum_sample_59.png)
+| ![Audio sample 0](Samples/batch_2_rec_vs_original_audio_sample_59.png) | ![spectrum sample 0](Samples/batch_2_rec_vs_original_spectrum_sample_59.png) |
+
 
 
 
