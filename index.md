@@ -1,8 +1,5 @@
-## Welcome to GitHub Pages
-
-You can use the [editor on GitHub](https://github.com/ced211/ced211.github.io/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## Inpainting an prediction GAN for audio
+IGAN, InpaintingGAN is a neural network to inpaint magnitude spectrum. It can be trained to inpaint the magnitude spectrum of an audio frame of length T second, given the previous and subsequent T seconds. PGAN, PredicitonGAN is an adaptation of IGAN to perform audio prediction. It can be trained to predict an audio frame of T second, given the T previous second. This webpage accompaing the [github repository] (https://github.com/ced211/master_thesis.git).
 
 ### Markdown
 
