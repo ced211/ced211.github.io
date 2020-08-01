@@ -22,11 +22,10 @@ On the example below, one can see the spectrum outputs by IGAN and the correspon
   </tr>
 </table>
 
-Here, you can heard the corresponding audio: [original audio](/Samples/batch_2_or_sample_59.wav), [reconstructed audio](/Samples/batch_2_rec_sample_59.wav).
-
+Here are other sample for T=0.128
 
 <audio controls>
-  <source src="/Samples/batch_0_or_sample_174.wav" type="audio/wav">
+  <source src="/Samples/kalimba137.wav" type="audio/wav">
 Your browser does not support the audio element.
 </audio> 
 
