@@ -12,7 +12,7 @@ Here, you can heard the corresponding audio: [original audio](/Samples/batch_2_o
 
 
 <audio id="test">
-<source src="http://www.kozco.com/tech/LRMonoPhase4.wav" type="audio/wav">
+<source src="Samples/test.wav" type="audio/wav">
 </audio>
 <button onclick="document.getElementById('test').play()">Play Audio</button>
 
