@@ -28,16 +28,16 @@
         <th> Waveform</th>
     </tr>
     <tr>
-        <td><img src="Samples/IGAN/0.128/batch_2_rec_vs_original_spectrum_sample_59.png" width="640" height="480"/></td>
-        <td><img src="Samples/IGAN/0.128/batch_2_rec_vs_original_audio_sample_59.png" width="640" height="480"/></td>
+        <td><img src="Samples/IGAN/0.128/batch_2_rec_vs_original_spectrum_sample_59.png"/></td>
+        <td><img src="Samples/IGAN/0.128/batch_2_rec_vs_original_audio_sample_59.png"/></td>
     </tr>
     <tr>
-        <th><img src="Samples/IGAN/0.128/batch_0_rec_vs_original_spectrum_sample_174.png"</th>
-        <th><img src="Samples/IGAN/0.128/batch_0_rec_vs_original_audio_sample_174.png"</th>
+        <td><img src="Samples/IGAN/0.128/batch_0_rec_vs_original_spectrum_sample_174.png"</td>
+        <td><img src="Samples/IGAN/0.128/batch_0_rec_vs_original_audio_sample_174.png"</td>
     </tr>
     <tr>
-        <th><img src="Samples/IGAN/0.128/batch_8_rec_vs_original_spectrum_sample_168.png"</th>
-        <th><img src="Samples/IGAN/0.128/batch_8_rec_vs_original_audio_sample_168.png"</th>
+        <td><img src="Samples/IGAN/0.128/batch_8_rec_vs_original_spectrum_sample_168.png"</td>
+        <td><img src="Samples/IGAN/0.128/batch_8_rec_vs_original_audio_sample_168.png"</td>
     </tr>
 </table>
 <table>
@@ -90,18 +90,153 @@
     </tr>
 </table>
 
-<p>Here are other sample for T=0.128 </p>
+<p>Here are other sample for T=0.128. One can notice that the reconstruction quality is lower, especially in the first
+    example which is a bad one. </p>
+
+<table class="center" id="igan_128">
+    <tr>
+        <th> Spectrum</th>
+        <th> Waveform</th>
+    </tr>
+    <tr>
+        <td><img src="Samples/IGAN/0.384/batch_0_rec_vs_original_spectrum_sample_3.png"/></td>
+        <td><img src="Samples/IGAN/0.384/batch_0_rec_vs_original_audio_sample_3.png"</td>
+    </tr>
+    <tr>
+        <th><img src="Samples/IGAN/0.384/batch_1_rec_vs_original_spectrum_sample_18.png"</th>
+        <th><img src="Samples/IGAN/0.384/batch_1_rec_vs_original_audio_sample_18.png"</th>
+    </tr>
+    <tr>
+        <th><img src="Samples/IGAN/0.384/batch_2_rec_vs_original_spectrum_sample_97.png"</th>
+        <th><img src="Samples/IGAN/0.384/batch_1_rec_vs_original_audio_sample_18.png"</th>
+    </tr>
+</table>
+<table>
+    <tr>
+        <th> Original Audio</th>
+        <th> Reconstructed Audio</th>
+    </tr>
+    <tr>
+        <td>
+            <audio controls=" ">
+                <source src="Samples/IGAN/0.384/batch_0_or_sample_3.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </td>
+        <td>
+            <audio controls=" ">
+                <source src="Samples/IGAN/0.384/batch_0_rec_sample_3.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <audio controls=" ">
+                <source src="Samples/IGAN/0.384/batch_1_or_sample_18.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </td>
+        <td>
+            <audio controls=" ">
+                <source src="Samples/IGAN/0.384/batch_1_rec_sample_18.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </td>
+    </tr>
+    </tr>
+    <tr>
+        <td>
+            <audio controls=" ">
+                <source src="Samples/IGAN/0.384/batch_2_or_sample_97.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </td>
+        <td>
+            <audio controls=" ">
+                <source src="Samples/IGAN/0.384/batch_2_rec_sample_97.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </td>
+    </tr>
+</table>
 
 
 <h3 id="igan">PGAN</h3>
 <p>
     PGAN is an adaptation of IGAN for audio prediction. The neural network predicts the magnitude spectrum of an
-    audio frame of length T given the T previous seconds.
+    audio frame of length T given the T previous seconds. On the examples below, one can see that PGAN perform less well
+    than IGAN. It is because the new task is much more
+    challenging. However, the result are still interesting. The example are obtained with T = 0.064.
 </p>
-<p>
-    On the examples below, one can see that PGAN perform less well than IGAN. It is because the new task is much more
-    challenging. However, the result are still interesting.
-</p>
+<table class="center" id="pgan_128">
+    <tr>
+        <th> Spectrum</th>
+        <th> Waveform</th>
+    </tr>
+    <tr>
+        <td><img src="Samples/PGAN/batch_3_rec_vs_original_spectrum_sample_63.png"/></td>
+        <td><img src="Samples/PGAN/batch_3_rec_vs_original_audio_sample_63.png"</td>
+    </tr>
+    <tr>
+        <th><img src="Samples/PGAN/batch_4_rec_vs_original_spectrum_sample_25.png"</th>
+        <th><img src="Samples/PGAN/batch_4_rec_vs_original_audio_sample_25.png"</th>
+    </tr>
+    <tr>
+        <th><img src="Samples/PGAN/batch_5_rec_vs_original_spectrum_sample_254.png"</th>
+        <th><img src="Samples/PGAN/batch_5_rec_vs_original_audio_sample_254.png"</th>
+    </tr>
+</table>
+<table>
+    <tr>
+        <th> Original Audio</th>
+        <th> Reconstructed Audio</th>
+    </tr>
+    <tr>
+        <td>
+            <audio controls=" ">
+                <source src="Samples/PGAN/batch_3_or_sample_63.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </td>
+        <td>
+            <audio controls=" ">
+                <source src="Samples/PGAN/batch_3_rec_sample_63.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <audio controls=" ">
+                <source src="Samples/PGAN/batch_4_or_sample_25.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </td>
+        <td>
+            <audio controls=" ">
+                <source src="Samples/PGAN/batch_4_rec_sample_25.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </td>
+    </tr>
+    </tr>
+    <tr>
+        <td>
+            <audio controls=" ">
+                <source src="Samples/PGAN/batch_5_or_sample_254.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </td>
+        <td>
+            <audio controls=" ">
+                <source src="Samples/PGAN/batch_5_rec_sample_254.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </td>
+    </tr>
+</table>
+
 <h3> Perceptual Evaluation</h3>
 <p>
     To perceptually evaluate the model, we use it to fill in one gap of T = 0.064s, located at 0.5s in an audio sample
