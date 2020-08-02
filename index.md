@@ -15,8 +15,8 @@
         repository</a>.</p>
 <h3 id="igan">IGAN</h3>
 <p>Here are some samples output by IGAN for T=0.064. To reconstruct the audio from the magnitude spectrums, the
-    Griffin-Lim algorithm was used. As shown in the various examples, the reconstructed spectrums are rather good,
-    even if they are blurred. On the other hand, the audio waveforms look similar to the ground truth even if they are
+    Griffin-Lim algorithm is used. As shown in the various examples, the reconstructed spectrums are rather good,
+    even if they are blurred. Besides, the audio waveforms look similar to the ground truth even if they are
     not close
     from them. This is explained because the Griffin-Lim does not output the exact waveform, even if it is fed
     with the real magnitude. Moreover, it works from an approximation of the real magnitude spectrum. To obtain this
@@ -167,7 +167,7 @@
     PGAN is an adaptation of IGAN for audio prediction. The neural network predicts the magnitude spectrum of an
     audio frame of length T given the T previous seconds. On the examples below, one can see that PGAN perform less well
     than IGAN. It is because the new task is much more
-    challenging. However, the result are still interesting. The example are obtained with T = 0.064.
+    challenging. However, the results are still interesting. The examples below are obtained with T = 0.064.
 </p>
 <table class="center" id="pgan_128">
     <tr>
@@ -246,7 +246,7 @@
 </p>
 <p>
     On the first and last example of this section, one can heard that IGAN does
-    it job. Indeed, it is very difficult to heard a difference between the original and the reconstructed one while the
+    it job. Indeed, it is difficult to heard a difference between the original and the reconstructed one while the
     difference is audible between the original audio and the one with the hole. In the second example, it is difficult
     to heard a difference between the original audio, and the one with the hole. This is probably because the hole come
     when the song is rather silent. Still, we can notice that IGAN doesn't put annoying noise instead of the silence.
@@ -323,7 +323,7 @@
     To test our model generalization ability, we used it to inpaint on the MAESTRO dataset while training it on the
     small version of the FMA dataset. The FMA dataset is composed of 3000 tracks of 30s of 8 different music styles
     while
-    the MAESTRO dataset is composed of classical piano records. The example below are obtained with IGAN with T = 0.064.
+    the MAESTRO dataset is composed of classical piano records. The examples below are obtained with IGAN with T = 0.064.
     When comparing these examples with the one shows <a href="#igan_64"> previously</a>, one can see that IGAN behaves
     in the same way in both case. Thus, the model generalization ability seems to be nice.
 </p>
