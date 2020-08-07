@@ -318,6 +318,124 @@
         </td>
     </tr>
 </table>
+<h3> Chaining prediction</h3>
+
+<p>
+    The considered frame length, 0.064, is very short, too short to be able to assess just by listening to it.
+    Previously, we fill in a gap 0.064 ms in an audio of 2s length.
+    In this experiment, we reconstruct the whole 2s long audio by frame of 64ms.
+    Each frame of 64ms are first reconstructed using IGAN, with as input the previous and subsequent 64ms, taken
+    from the original audio.
+    Then, all the predicted frames are concatenated together. As shown in the examples below, the audios are easily
+    recognizable, even if they are noisy.
+</p>
+<table>
+    <tr>
+        <th> Original Audio</th>
+        <th> Reconstructed Audio</th>
+    </tr>
+    <tr>
+        <td>
+            <audio controls=" ">
+                <source src="./Samples/PerceptualTest/chaining/igan/or_chaining_21.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </td>
+        <td>
+            <audio controls=" ">
+                <source src="./Samples/PerceptualTest/chaining/igan/rec_chaining_21.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </td>
+
+    </tr>
+    <tr>
+        <td>
+            <audio controls=" ">
+                <source src="./Samples/PerceptualTest/chaining/igan/or_chaining_157.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </td>
+        <td>
+            <audio controls=" ">
+                <source src="./Samples/PerceptualTest/chaining/igan/rec_chaining_157.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <audio controls=" ">
+                <source src="./Samples/PerceptualTest/chaining/igan/or_chaining_457.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </td>
+        <td>
+            <audio controls=" ">
+                <source src="./Samples/PerceptualTest/chaining/igan/rec_chaining_457.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </td>
+    </tr>
+</table>
+<p>
+    In this experiment, we do the same than previously, but with PGAN.
+    Each frame of 64ms are first reconstructed using PGAN, with as input the previous frame, taken
+    from the original audio.
+    Then, all the predicted frames are concatenated together. As shown in the examples below, the audios are easily
+    recognizable, even if they are noisy.</p>
+
+<table>
+    <tr>
+        <th> Original Audio</th>
+        <th> Reconstructed Audio</th>
+    </tr>
+    <tr>
+        <td>
+            <audio controls=" ">
+                <source src="./Samples/PerceptualTest/chaining/pgan/or_chaining_21.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </td>
+        <td>
+            <audio controls=" ">
+                <source src="./Samples/PerceptualTest/chaining/pgan/rec_chaining_21.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </td>
+
+    </tr>
+    <tr>
+        <td>
+            <audio controls=" ">
+                <source src="./Samples/PerceptualTest/chaining/pgan/or_chaining_157.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </td>
+        <td>
+            <audio controls=" ">
+                <source src="./Samples/PerceptualTest/chaining/pgan/rec_chaining_157.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <audio controls=" ">
+                <source src="./Samples/PerceptualTest/chaining/pgan/or_chaining_457.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </td>
+        <td>
+            <audio controls=" ">
+                <source src="./Samples/PerceptualTest/chaining/pgan/rec_chaining_457.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </td>
+    </tr>
+</table>
+
+
 <h3> Generalization </h3>
 <p>
     To test our model generalization ability, we used it to inpaint on the MAESTRO dataset while training it on the
