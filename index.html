@@ -6,7 +6,7 @@
 </head>
 <body>
 <h2 id="inpainting-an-prediction-gan-for-audio">Inpainting and Prediction GAN for audio</h2>
-<p> InpaintingGAN, IGAN in short, is a neural network to inpaint magnitude spectrums. It can be trained to inpaint the
+<p> InpaintingGAN, IGAN in short, is a neural network designed to inpaint magnitude spectrums. It can be trained to inpaint the
     magnitude
     spectrum of an audio frame of length T seconds, given the previous and subsequent T seconds. PredicitonGAN or PGAN
     is
@@ -16,9 +16,9 @@
 <h3 id="igan">IGAN</h3>
 <p>Here are some samples output by IGAN for T=0.064. To reconstruct the audio from the magnitude spectrums, the
     Griffin-Lim algorithm was used. As shown in the various examples, the reconstructed spectrums are rather good,
-    even if they are blurred. On the other hand, the audio waveforms look similar to the ground truth even if they are
+    even if they are blurred. The audio waveforms look similar to the ground truth even if they are
     not close
-    from them. This is explained because the Griffin-Lim does not output the exact waveform, even if it is fed
+    from them. It might be because the Griffin-Lim does not output the exact waveform, even if it is fed
     with the real magnitude. Moreover, it works from an approximation of the real magnitude spectrum. To obtain this
     result, IGAN was trained for 200 epochs on the small FMA dataset. The network
     performance can be probably improved by letting it train longer. </p>
@@ -245,7 +245,7 @@
     are obtained with IGAN with T = 0.064.
 </p>
 <p>
-    On the first and last example of this section, one can heard that IGAN does
+    On the last example of this section, one can heard that IGAN does
     it job. Indeed, it is very difficult to heard a difference between the original and the reconstructed one while the
     difference is audible between the original audio and the one with the hole. In the second example, it is difficult
     to heard a difference between the original audio, and the one with the hole. This is probably because the hole come
@@ -321,13 +321,13 @@
 <h3> Chaining prediction</h3>
 
 <p>
-    The considered frame length, 0.064, is very short, too short to be able to assess just by listening to it.
+    The considered frame length, 0.064, is very short.
     Previously, we fill in a gap 0.064 ms in an audio of 2s length.
     In this experiment, we reconstruct the whole 2s long audio by frame of 64ms.
-    Each frame of 64ms are first reconstructed using IGAN, with as input the previous and subsequent 64ms, taken
+    Each frame of 64ms are reconstructed using IGAN, with as input the previous and subsequent 64ms, taken
     from the original audio.
     Then, all the predicted frames are concatenated together. As shown in the examples below, the audios are easily
-    recognizable, even if they are noisy.
+    recognizable, even if they are noisy. The noise might come from a possible discontinuity at the intersection of two frames.
 </p>
 <table>
     <tr>
