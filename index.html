@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>A Generative Adversarial Approach for AudioInpainting</title>
+    <title>A Generative Adversarial Approach for Audio Inpainting</title>
 </head>
 <body>
 <h2 id="inpainting-an-prediction-gan-for-audio">A generative adversarial approach for audio inpainting</h2>
@@ -15,7 +15,7 @@
     more similar to the concept perform audio prediction. It can be trained to predict an audio frame of T seconds, given
     the T previous seconds. This web page accompaing the <a href="https://github.com/ced211/master_thesis.git">github
         repository</a>.</p>
-<h3 id="igan">CIGAN</h3>
+<h3 id="cigan">CIGAN</h3>
 <p>Here are some samples output by CIGAN for T=0.064. To reconstruct the audio from the magnitude spectrums, the
     Griffin-Lim algorithm was used. As shown in the various examples, the reconstructed spectrums are rather good,
     even if they are blurred. The audio waveforms look similar to the ground truth even if they are
@@ -164,7 +164,7 @@
 </table>
 
 
-<h3 id="igan">PIGAN</h3>
+<h3 id="pigan">PIGAN</h3>
 <p>
     PIGAN is an adaptation of the network in order to achieve audio prediction. The neural network predicts the magnitude spectrum of an
     audio frame of length T given the T previous seconds. On the examples below, one can see that PIGAN perform less well
